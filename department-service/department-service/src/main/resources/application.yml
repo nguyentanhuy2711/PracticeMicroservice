@@ -4,5 +4,12 @@ server:
 spring:
   application:
     name: DEPARTMENT-SERVICE
-  zipkin:
-    base-url: http://127.0.0.1:9411/
+
+    eureka:
+      client:
+        register-with-eureka: false
+        fetch-registry: false
+        service-url:
+          defaultZone: http://localhost:8786/eureka/
+        instance:
+          hostname: localhost
